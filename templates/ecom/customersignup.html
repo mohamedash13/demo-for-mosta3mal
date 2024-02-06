@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>مستعمل</title>
+    <link rel="stylesheet" href="{% static "css/customersignup.css" %}">
+  </head>
+  <body>
+    {% include "ecom/navbar.html" %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <form class="box" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <h1>حساب جديد</h1>
+              
+              {% render_field userForm.first_name class="form-control" placeholder="الاسم الاول" %}
+              {% render_field userForm.username class="form-control" placeholder="اسم المسنخدم" %}
+              {% render_field userForm.password class="form-control" placeholder="كلمه المرور" %}
+              {% render_field customerForm.address class="form-control" placeholder="العنوان" %}
+              {% render_field customerForm.mobile class="form-control" placeholder="رقم الهاتف" %}
+              
+              <input type="submit" name="" value="انشاء حساب">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>
+    {% include "ecom/footer.html" %}
+  </body>
+</html>

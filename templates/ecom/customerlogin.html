@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>مستعمل</title>
+<link rel="icon" type = "image/png" href="{% static "images/favicon.png" %}" />
+<link rel="stylesheet" href="{% static "css/customerlogin.css" %}">
+
+  </head>
+  <body>
+    {% include "ecom/navbar.html" %}
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form class="box" method="post">
+                  {% csrf_token %}
+                    <h1>تسجيل الدخول</h1>
+                    
+                               {% render_field form.username class="form-control" placeholder="اسم المستخدم" autocomplete="off" %}
+                               {% render_field form.password class="form-control" placeholder="كلمه المرور" %}
+                     <input type="submit" name="" value="تسجيل الدخول" >
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+{% include "ecom/footer.html" %}
+  </body>
+</html>

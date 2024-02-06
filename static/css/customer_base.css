@@ -1,0 +1,276 @@
+:root{
+  --gray: #252424;
+  --black: rgb(10, 10, 10);
+}
+
+*{
+  font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+body {
+  background-color: #f7f7f7;
+  overflow-x:hidden;
+width:100%!important;
+}
+
+#navbar {
+  background-color: black;
+  color: white;
+}
+
+.row1 {
+  padding-top: 10px;
+}
+
+.row2 {
+  padding-bottom: 20px
+}
+
+.navbar-input {
+  padding: 11px 16px;
+  border-radius: 2px 0 0 2px;
+  border: 0 none;
+  outline: 0 none;
+  font-size: 15px;
+  color: black;
+}
+
+.navbar-button {
+  background-color: var(--gray);
+  border: 5px solid var(--gray);
+  border-radius: 0 2px 2px 0;
+  color: #565656;
+  padding: 10px 0;
+  height: 43px;
+  cursor: pointer
+}
+
+.cart-button {
+  /* background-color: #bfbfbf; */
+  /* background-color: var(--gray); */
+      padding: 5px 30px 0 10px;
+  height: 43px;
+  width: 40px;
+  text-align: start;
+  border-radius: 2px;
+  font-weight: 500;
+  display: block;
+  color: #FFFFFF;
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+
+.cart-button:hover {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer
+}
+
+.cart-svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.item-number {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .1);
+  height: 20px;
+  padding: 5px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  display: inline-block;
+  color: #fff;
+  line-height: 12px;
+  margin-left: 10px;
+}
+
+.upper-links {
+  display: inline-block;
+  padding: 0 11px;
+  line-height: 23px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0;
+  color: inherit;
+  border: none;
+  outline: none;
+  font-size: 12px
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0px
+}
+
+.dropdown:hover {
+  background-color: #fff
+}
+
+.dropdown:hover .links {
+  color: #000
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block
+}
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  display: none;
+  background-color: #fff;
+  color: #333;
+  left: 0px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 4px 8px -3px #555454;
+  margin: 0;
+  padding: 0px
+}
+
+.links {
+  color: #fff;
+  text-decoration: none
+}
+
+.links:hover {
+  color: #fff;
+}
+
+.profile-links {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  display: block;
+  line-height: 23px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  color: white;
+}
+.profile-links:hover{
+color: white;
+text-decoration: none!important;
+border-bottom: 1px solid #e9e9e9;
+
+}
+
+.profile-li {
+  padding-top: 2px
+}
+
+.largenav {
+  display: none
+}
+
+.smallnav {
+  /* display: block;
+  position: absolute!important;
+  right: 10px!important;
+  top: 30%!important; */
+}
+
+.smallsearch {
+  margin-left: 15px;
+  margin-top: 15px
+}
+
+.menu {
+  cursor: pointer
+}
+
+      /* /*---------------------------------------
+         Social section
+      -----------------------------------------*/
+      footer {
+        padding: 0px 0px 0px 0px;
+        background-color: black;
+        margin: 0px;
+      }
+
+
+      #ftr {
+
+        padding: 20px;
+      }
+
+      .fa {
+        background: rgba(255, 255, 255, 0);
+
+        font-size: 23px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 500%;
+      }
+
+      .fa:hover {
+        opacity: 0.5;
+        text-decoration: none;
+      }
+
+      .fa-facebook {
+        color: white;
+        margin-top: 30px;
+        padding: 10px!important;
+        border-radius: 100px!important;
+        background-color: var(--gray);
+
+      }
+
+      .fa-whatsapp {
+          background-color: var(--gray);
+          color: white;
+          margin-top: 30px;
+          padding: 10px;
+          border-radius: 100px;
+      } */
+
+      p {
+        text-align: center;
+
+      }
+      .smallLoginSignup{
+        width: 100%;
+        justify-content: space-around;
+      }
+      .smallsearch {
+          margin-top: 5vh;
+      }
+      .largelogo{
+          margin:-10%; width: fit-content!important; display:flex;
+        }
+@media screen and (min-width: 768px) {
+  .largenav {
+      display: block
+  }
+
+  .smallnav {
+      display: none
+  }
+
+  .smallsearch {
+      margin: 0px
+  }
+  .smallLoginSignup{
+    width: 30%;
+    justify-content: space-around;
+    float:right;
+    margin-bottom:5%;
+  }
+  .largelogo{
+    margin: -20%!important;
+
+  }
+  
+}

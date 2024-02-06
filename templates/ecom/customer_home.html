@@ -1,0 +1,66 @@
+{% extends 'ecom/customer_base.html' %} 
+{% load static %} 
+{% block content %}
+
+{% if products %}
+  <h3 style="text-align: center; color: #3e454c; margin-top: 5vh;">{{word}}</h3>
+  <br>
+
+  <!-- products data start -->
+  <div class="container">
+    <div class="row">
+      {% for p in products %}
+        <!-- card1 -->
+        <div class="col-sm-6 col-md-4 mb-1">
+          <div class="container page-wrapper" style="width: 100%;">
+            <div class="page-inner">
+              <div class="row">
+                <div class="el-wrapper">
+                  <div class="box-up">
+                    <img class="img" src="{% static p.product_image.url %}" alt="product pic" height="300px" width="300px">
+                    <div class="img-info">
+                      <div class="info-inner">
+                        <span style="background-color: black; color: fbfbfb;" class="p-company">{{p.name}}</span>
+                      </div>
+                      <div class="a-size">{{p.description}}</div>
+                    </div>
+                  </div>
+                  <div class="box-down">
+                    <div class="h-bg">
+                      <div class="h-bg-inner"></div>
+                    </div>
+                    <a class="cart" href="{% url 'add-to-cart' p.id %}">
+                      <span class="price" style="margin-right: 5px;">EGP {{p.price}}</span>
+                      <span class="add-to-cart">
+                        <span class="txt"><i style="margin-left: 100px;" class="fa fa-shopping-cart"></i>اضف الي السله</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card1 end -->
+        {% if forloop.counter|divisibleby:"2" %}
+          <div class="w-100 d-md-none d-lg-none"></div> <!-- Add a newline after every 2 cards on medium view -->
+        {% endif %}
+        {% if forloop.counter|divisibleby:"3" %}
+          <div class="w-100 d-lg-none"></div> <!-- Add a newline after every 3 cards on large view -->
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <!-- products data end -->
+{% else %}
+  <h3 style="text-align: center; color: #3e454c;">No Search Found</h3>
+{% endif %}
+
+<br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!--
+developed By : sumit kumar
+-->
+
+{% endblock content %}

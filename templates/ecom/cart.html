@@ -1,0 +1,57 @@
+{% extends 'ecom/homebase.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet'  href="{% static "css/cart.css" %}" />
+</head>
+
+<br><br><br><br>
+
+<div class="container">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h6 style="text-align:center;" class="panel-title">محتويات السله</h6>
+    </div>
+
+    <div class="row">
+      {% for p in products %}
+        {% if p %}
+          <div class="col-md-4 mb-4">
+            <div style="width: 95%!important;" class="card">
+              <img class="card-img-top" src="{% static p.product_image.url %}" alt="Product Image">
+              <div class="card-body">
+                <h5 class="card-title">{{ p.name }}</h5>
+                <p class="card-text">{{ p.description }}</p>
+                <p class="card-text">السعر: EGP {{ p.price }}</p>
+                <a style="position: relative; left: 90%; transform: translateX(-50%); margin:10px 0 10px 0; padding:5px; font-size:15px; display:flex; justify-content:center; align-items:center; width: 12%; border-radius:100px;" class="btn btn-danger position-relative start-50 btn-xs" href="{% url 'remove-from-cart' p.id  %}"><span class="glyphicon glyphicon-trash"></span></a>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="col-md-12">
+            <h1>no products</h1>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<br><br><br>
+
+<div style="text-align: center;">
+  <a class="btn btn-black btn-lg"href="/">الصفحه الرئيسيه</a>
+  <br>
+  <br>
+  <button class="btn btn-danger btn-lg">Total EGP {{ total }}</button>
+  <a href="/customer-address"><button class="btn btn-success btn-lg" ><span>Purchase </span></button></a>
+</div>
+
+<br><br><br><br><br>
+
+{% endblock content %}
